@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reproductor de Musica</title>
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+   <h1 style="color: white;">Reproductor de Marco Antonio Arredondo Medina</h1>
+   <h2 style="color: white;">Canciones que son famosas en el mundo del futbol</h2>   
+   
+<div class="container">
+   <div class="main-video-container">
+      <h3 class="main-vid-title">Waka Waka</h3>
+      <video loop controls class="main-video" poster="images/wakaPoster.jpg" id="videoPlayer" width="700">
+         <source src="videos/Waka-Waka.mp4"  type="video/mp4">
+         <track src="cc/waka-waka.vtt" kind="subtitles" srclang="es" label="Español">
+      </video>
+      <div class="row">
+         <label>Volocidad de video: </label>
+         <button class="active" id="bVel1" onclick="acelerarVideo(1)">x1</button>
+         <button id="bVel2" onclick="acelerarVideo(2)">x2</button>
+      </div>
+      <div class="row">
+         <label>Tamaño de reproductor: </label>
+         <button id="bDim1" onclick="cambiarDim(1)">Chico</button>
+         <button class="active" id="bDim2" onclick="cambiarDim(2)">Normal</button>
+         <button id="bDim3" onclick="cambiarDim(3)">Grande</button>
+      </div>
+   </div>
+
+   <div class="video-list-container">
+
+      <div class="list active">
+         <video src="videos/Waka-Waka.mp4" class="list-video" poster="images/wakaPoster.jpg">
+         </video>
+         <h3 class="list-title">Waka Waka</h3>
+      </div>
+
+      <div class="list">
+         <video src="videos/Live_Is_Life.mp4" class="list-video" poster="images/LivePoster.jpg"></video>
+         <h3 class="list-title">Live Is Life</h3>
+      </div>
+
+      <div class="list">
+         <video src="videos/This_Ones_For_You.mp4" class="list-video" poster="images/thisOnePoster.jpg"></video>
+         <h3 class="list-title">This Ones For You</h3>
+      </div>
+
+      <div class="list">
+         <video src="videos/We_Are_The_Champions.mp4" class="list-video" poster="images/championPoster.jpg">
+            <track src="cc/champions.vtt" kind="subtitles" srclang="es" label="Ingles">
+         </video>
+         <h3 class="list-title">We Are The Champions</h3>
+      </div>
+
+      <div class="list">
+         <video src="videos/Youll_Never_Walk_Alone.mp4" class="list-video" poster="images/neverWalkPoster.jpg"></video>
+         <h3 class="list-title">You Will Never Walk Alone</h3>
+      </div>
+   </div>
+</div>
+
+   <div class="video-control-container">
+      <div class="row" style="margin-bottom: 10px;">
+         <button id="snapShot" onclick="takeSnapShot()">Tomar captura de video</button>
+      </div>
+      <div class="row">
+         <canvas id="frame" width="400" height="350"></canvas>
+      </div>
+   </div>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
